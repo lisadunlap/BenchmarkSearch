@@ -1,6 +1,6 @@
 import gradio as gr
 import logging
-from repochat1 import OpenAIEmbeddingRetriever, NVEmbedRetriever, load_datasets
+from toy_retrieval_system import OpenAIEmbeddingRetriever, NVEmbedRetriever, load_datasets
 
 # Define available datasets and models
 datasets = ['movies', 'vibecheck', 'arena', 'math', 'narrativeqa', 'hotpot']
