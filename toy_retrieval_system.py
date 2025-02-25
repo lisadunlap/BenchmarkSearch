@@ -8,7 +8,7 @@ import numpy as np
 from tqdm import tqdm
 
 # Import the LLM embedding function from your llm_utils file
-from utils_llm import get_llm_embedding
+from serve.utils_llm import get_llm_embedding
 
 # Import your dataset loader
 from data_prep import load_datasets

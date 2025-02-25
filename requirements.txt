@@ -5,3 +5,5 @@ gradio
 pandas
 tqdm
 numpy
+faiss-cpu
+flask

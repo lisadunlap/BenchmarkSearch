@@ -12,7 +12,7 @@ from openai import OpenAI
 import anthropic
 import datetime
 import numpy as np
-from embedding_client import get_text_embedding
+from serve.embedding_client import get_text_embedding
 logging.basicConfig(level=logging.ERROR)
 
 if not os.path.exists("cache/llm_cache"):
