@@ -78,6 +78,15 @@ def load_wikipedia() -> pd.DataFrame:
     df = df.sample(n=10000, random_state=42)
     return df[['question']]
 
+def load_hotpot() -> pd.DataFrame:
+    """Load and prepare the Hotpot dataset."""
+    df = pd.read_json('data/hotpot_train_v1.1.json')
+    df = df.explode('context')
+    df['question'] = df.apply(lambda row: f"Title: {row['context'][0]}\n\n{''.join(row['context'][1])}", axis=1)
+    print(f"Loaded {len(df)} Hotpot questions")
+    df = df.sample(n=100, random_state=42)
+    return df[['question']]
+
 # Dictionary mapping dataset names to their load functions
 DATASET_LOADERS = {
     'arena': load_arena_dataset,
@@ -87,7 +96,8 @@ DATASET_LOADERS = {
     'amazon': load_amazon_reviews,
     'wikipedia': load_wikipedia,
     'arena_100k': load_Arena_100k,
-    'vibecheck': load_vibecheck_benchmark
+    'vibecheck': load_vibecheck_benchmark,
+    'hotpot': load_hotpot
 }
 
 def load_datasets(dataset_names: List[str]) -> List[str]:
