@@ -8,7 +8,9 @@ A lil' retrival system that I am playing around with.
 pip install -r requirements.txt
 ```
 
-## Run NVEM
+## Run NVEmbedding Server 
+
+Will at some point add more models.
 
 ```bash
 python embedding_server.py
@@ -25,5 +27,3 @@ python toy_retrieval_system.py --dataset vibecheck --query sarcastic --embedding
 ```bash
 python gradio_app.py
 ```
-
-
